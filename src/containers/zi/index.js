@@ -99,7 +99,7 @@ export default class Zi extends Component {
           <RefreshControl
             onRefresh={this.onRefresh}
             refreshing={this.state.isRefreshing}
-            title="努力加载中..."
+            title="努力加载中TQ..."
             tintColor="#FF5200"
             titleColor="#FF5200"
             progressBackgroundColor="#FF5200"

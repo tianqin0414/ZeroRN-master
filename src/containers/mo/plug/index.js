@@ -47,7 +47,7 @@ export default class Plug extends Component {
             this.goWeb(apiurls.splash);
           }}
         >
-          启动屏!
+          启动屏TQ!
         </Text>
         <Text
           style={styles.welcome}
