@@ -1,7 +1,5 @@
 import React, { Component, } from 'react';
 import { StyleSheet, Text, View, } from 'react-native';
-import Main from '../../../AppNavigationState';
-// import Main1 from './test';
 
 const styles = StyleSheet.create({
   container: {
@@ -16,6 +14,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 });
+
 export default class Login extends Component {
  static navigationOptions = {
    header: null,
@@ -36,7 +35,7 @@ export default class Login extends Component {
 	         this.goTab();
          }}
        >
-         墨规范!
+         登入!
        </Text>
      </View>
    );

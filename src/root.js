@@ -10,7 +10,7 @@ import codePush from 'react-native-code-push';
 import configureStore from './app/store/configureStore';
 // import App from './AppNavigationState';
 // import App from './containers/initial/Login';
-import App from './containers/initial';
+import App from './containers/initial/InitialNavigation';
 
 const store = configureStore();
 

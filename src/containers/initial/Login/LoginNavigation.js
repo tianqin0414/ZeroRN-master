@@ -1,7 +1,8 @@
 import { createStackNavigator, } from 'react-navigation';
 
-import InitialPage from './index';
+
 import { BottomTabNavigatorConfig, StackNavigatorConfig, } from '../../../config';
+import InitialPage from './index';
 import Main from '../../../AppNavigationState';
 
 
