@@ -2,8 +2,8 @@ import { createStackNavigator, } from 'react-navigation';
 
 import InitialPage from './index';
 import { StackNavigatorConfig, } from '../../config';
-import Login from './Login/LoginNavigation';
-import Register from './Register/RegisterNavigation';
+import Login from './login/LoginNavigation';
+import Register from './register/RegisterNavigation';
 
 
 const Routers = createStackNavigator(

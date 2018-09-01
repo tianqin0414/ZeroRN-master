@@ -9,8 +9,9 @@ import SplashScreen from 'react-native-splash-screen';
 import codePush from 'react-native-code-push';
 import configureStore from './app/store/configureStore';
 // import App from './AppNavigationState';
-// import App from './containers/initial/Login';
-import App from './containers/initial/InitialNavigation';
+// import App from './containers/initial/login';
+import App from './containers/initialTQ/InitialNavigation';
+// import App from './containers/initialTQ/index';
 
 const store = configureStore();
 
