@@ -1,12 +1,14 @@
 import React, { Component, } from 'react';
 import { StyleSheet, Text, View, } from 'react-native';
+import { global, } from '../../commons/utils';
 
 
 // 橘色 #F94301
 
 const Dimensions = require('Dimensions');
-let h = 80;
-let BHeight= 50;
+
+const h = px2dp(80);
+// let BHeight= 50;
 const styles = StyleSheet.create({
   wrapper: {
     marginHorizontal: 10,
