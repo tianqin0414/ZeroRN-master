@@ -11,7 +11,7 @@ import configureStore from './app/store/configureStore';
 // import App from './AppNavigationState';
 // import App from './containers/initial/login';
 import App from './containers/initialTQ/InitialNavigation';
-// import App from './containers/initialTQ/index';
+// import App from './containers/initialTQ/login/LoginNavigation';
 
 const store = configureStore();
 

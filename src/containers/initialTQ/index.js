@@ -1,5 +1,5 @@
 import React, { Component, } from 'react';
-import { StyleSheet, Text, View, } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, } from 'react-native';
 import { global, } from '../../commons/utils/Global';
 
 
@@ -26,25 +26,28 @@ export default class Rule extends Component {
    return (
      <View style={styles.entire}>
        <View style={styles.wrapper}>
-
-         <View
-           style={styles.button}
-           backgroundColor={'#F94301'}
+         <TouchableOpacity
            onPress={() => {
-		     this.goLogin();
-	     }}
+			       this.goLogin();
+		       }}
          >
-           <Text
-             style={[ styles.buttonFont, { color: 'white', }, ]}
+           <View
+             style={styles.button}
+             backgroundColor={'#F94301'}
            >
-		         登录
-	         </Text>
-         </View>
+             <Text
+               style={[ styles.buttonFont, { color: 'white', }, ]}
+             >
+	         登录
+             </Text>
+
+           </View>
+         </TouchableOpacity>
          <View
            style={styles.button}
            backgroundColor={'#F8F8F8'}
            onPress={() => {
-			     this.goLogin();
+			     this.goRegister();
 		     }}
          >
            <Text
@@ -72,9 +75,7 @@ const styles = StyleSheet.create({
   wrapper: {
     marginHorizontal: px2dp(40),
     marginVertical: SCREEN_HEIGHT - FH,
-    // backgroundColor: '#0e0204',
     height: FH,
-    // borderRadius: 7,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -83,21 +84,11 @@ const styles = StyleSheet.create({
     borderRadius: 7,
 	  height: CH,
 	  width: CW,
-
     alignItems: 'center',
 	  justifyContent: 'center',
   },
 
-  right: {
-    borderRadius: 7,
-	  width: CW,
-    height: CH,
-    backgroundColor: '#F94301',
-  },
-
-
   buttonFont: {
-    fontSize: FONT_SIZE(20),
-    // color: '#f3f6f9',
+    fontSize: FONT_SIZE(18),
   },
 });
