@@ -1,19 +1,6 @@
 import React, { Component, } from 'react';
 import { StyleSheet, Text, View, } from 'react-native';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#1155ff',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-});
 
 export default class Login extends Component {
  static navigationOptions = {
@@ -29,6 +16,7 @@ export default class Login extends Component {
  render() {
    return (
      <View style={styles.container}>
+       <View style={styles.titleView}></View>
        <Text
          style={styles.welcome}
          onPress={() => {
@@ -41,3 +29,17 @@ export default class Login extends Component {
    );
  }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#1155ff',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+});
