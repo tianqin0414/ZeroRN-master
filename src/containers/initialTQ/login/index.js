@@ -4,6 +4,15 @@ import { fontSizePD, } from '../../../commons/utils/Tool';
 
 
 export default class Login extends Component {
+
+  // constructor(props) {
+  //   //   super(props);
+  //   //   this.state = {
+  //   //     inputUsername: '',
+  //   //   };
+
+  state = {inputUsername: ''};
+
  static navigationOptions = {
    header: null,
  };
@@ -23,14 +32,22 @@ export default class Login extends Component {
          </View>
          <View style={styles.inputView}>
            <Text style={styles.inputTitle}>手机号</Text>
-           <TextInput style={styles.textInput} />
+           <TextInput
+             style={styles.textInput}
+             keyboardType="numeric"
+             placeholder="请输入您的手机号"
+             underlineColorAndroid="transparent"
+             // onChangeText={(text) => {
+             //   this.setState({inputPhoneNum: text})
+             // }}
+           />
          </View>
          <View style={styles.inputView}>
            <Text style={styles.inputTitle}>验证码</Text>
            <TextInput style={styles.textInput} />
          </View>
          <View style={styles.loginBView}>
-           <Text style={{color: '#FFFFFF', fontSize: FONT_SIZE(20)}}>登录</Text>
+           <Text style={{ color: '#FFFFFF', fontSize: FONT_SIZE(20), }}>登录</Text>
          </View>
        </View>
      </View>
