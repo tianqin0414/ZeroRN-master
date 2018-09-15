@@ -1,17 +1,17 @@
 import React, { Component, } from 'react';
-import { StyleSheet, Text, View, TextInput, } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, } from 'react-native';
 import { fontSizePD, } from '../../../commons/utils/Tool';
-
+import { Toast, } from 'teaset';
 
 export default class Login extends Component {
-
   // constructor(props) {
-  //   //   super(props);
-  //   //   this.state = {
-  //   //     inputUsername: '',
-  //   //   };
+  //     super(props);
+  //     this.state = {
+  //       inputUsername: '',
+  //     };
 
-  state = {inputUsername: ''};
+
+  state = { inputUsername: '', };
 
  static navigationOptions = {
    header: null,
@@ -20,6 +20,14 @@ export default class Login extends Component {
  goTab = () => {
    const { navigation, } = this.props; // TQ0825
    navigation.navigate('Main');
+ };
+
+ login() {
+   if (this.state.inputPhoneNum === '111') {
+     Toast.message('登入成功');
+   } else {
+     Toast.message('失败');
+   }
  };
 
 
@@ -37,18 +45,20 @@ export default class Login extends Component {
              keyboardType="numeric"
              placeholder="请输入您的手机号"
              underlineColorAndroid="transparent"
-             // onChangeText={(text) => {
-             //   this.setState({inputPhoneNum: text})
-             // }}
+             onChangeText={(text) => {
+               this.setState({ inputPhoneNum: text, });
+             }}
            />
          </View>
          <View style={styles.inputView}>
            <Text style={styles.inputTitle}>验证码</Text>
            <TextInput style={styles.textInput} />
          </View>
-         <View style={styles.loginBView}>
-           <Text style={{ color: '#FFFFFF', fontSize: FONT_SIZE(20), }}>登录</Text>
-         </View>
+         <TouchableOpacity onPress={() => this.login()}>
+           <View style={styles.loginBView}>
+             <Text style={{ color: '#FFFFFF', fontSize: FONT_SIZE(20), }}>登录</Text>
+           </View>
+         </TouchableOpacity>
        </View>
      </View>
    );
