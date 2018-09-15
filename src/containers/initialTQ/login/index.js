@@ -1,26 +1,25 @@
+import { Toast, } from 'teaset';
 import React, { Component, } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, } from 'react-native';
 import { fontSizePD, } from '../../../commons/utils/Tool';
-import { Toast, } from 'teaset';
+
 
 export default class Login extends Component {
-  // constructor(props) {
-  //     super(props);
-  //     this.state = {
-  //       inputUsername: '',
-  //     };
-
-
-  state = { inputUsername: '', };
-
  static navigationOptions = {
    header: null,
  };
 
+  state = { inputUsername: '', };
+  // constructor(props) {
+  //       super(props);
+  //       this.state = {
+  //         inputUsername: '',
+  //       };
+
  goTab = () => {
    const { navigation, } = this.props; // TQ0825
    navigation.navigate('Main');
- };
+ }
 
  login() {
    if (this.state.inputPhoneNum === '111') {
@@ -28,7 +27,7 @@ export default class Login extends Component {
    } else {
      Toast.message('失败');
    }
- };
+ }
 
 
  render() {

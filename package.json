@@ -28,7 +28,8 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "reselect": "^3.0.1",
-    "rn-placeholder": "^1.2.0"
+    "rn-placeholder": "^1.2.0",
+    "teaset": "0.5.9"
   },
   "devDependencies": {
     "babel": "^6.23.0",
