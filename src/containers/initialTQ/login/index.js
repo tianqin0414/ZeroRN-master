@@ -4,12 +4,15 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity, } from 'react-nati
 import { fontSizePD, } from '../../../commons/utils/Tool';
 
 
+const api = 'http://118.25.105.109:8001/Help/Api/POST-Customer-LoginCustomer';
+
 export default class Login extends Component {
  static navigationOptions = {
    header: null,
  };
 
-  state = { inputUsername: '', };
+  state = { inputPhoneNum: '', };
+  state = { inputVerifyCode: '', };
   // constructor(props) {
   //       super(props);
   //       this.state = {
@@ -19,14 +22,45 @@ export default class Login extends Component {
  goTab = () => {
    const { navigation, } = this.props; // TQ0825
    navigation.navigate('Main');
- }
+ };
 
  login() {
-   if (this.state.inputPhoneNum === '111') {
-     Toast.message('登入成功');
+   const CellphoneNo = this.state.inputPhoneNum;
+   const PassWord = this.state.inputVerifyCode;
+
+   const reg = new RegExp('^[0-9]*$');
+   const regLen = new RegExp('^1\\d{10}$');
+   const headers = {
+     Body: {
+       CellphoneNo: "15257325583",
+       PassWord: "12345",
+     },
+   };
+   // const formData = new FormData();
+   // formData.append('CellphoneNo', CellphoneNo);
+   // formData.append('PassWord', PassWord);
+
+   if ((reg.test(CellphoneNo) && regLen.test(CellphoneNo))) {
+     Toast.message('正确');
    } else {
-     Toast.message('失败');
+     Toast.message('手机号格式不正确');
    }
+
+   fetch(api, { method: 'POST', Body: headers, })
+     .then((response) => response.text())
+     .then((responseText) => {
+       // const json = JSON.parse(responseText);
+       // Toast.message(responseText);
+       // console.log(responseText);
+       // if (responseText.HasError) {
+       //   Toast.message('登入成功');
+       // } else {
+       //   Toast.message('失败');
+       // }
+     })
+     .catch((error) => {
+       console.error(error);
+     });
  }
 
 
@@ -42,7 +76,7 @@ export default class Login extends Component {
            <TextInput
              style={styles.textInput}
              keyboardType="numeric"
-             placeholder="请输入您的手机号"
+             placeholder="请填写手机号"
              underlineColorAndroid="transparent"
              onChangeText={(text) => {
                this.setState({ inputPhoneNum: text, });
@@ -51,7 +85,15 @@ export default class Login extends Component {
          </View>
          <View style={styles.inputView}>
            <Text style={styles.inputTitle}>验证码</Text>
-           <TextInput style={styles.textInput} />
+           <TextInput
+             style={styles.textInput}
+             keyboardType="numeric"
+             placeholder="请填写验证码"
+             underlineColorAndroid="transparent"
+             onChangeText={(text) => {
+               this.setState({ inputVerifyCode: text, });
+             }}
+           />
          </View>
          <TouchableOpacity onPress={() => this.login()}>
            <View style={styles.loginBView}>
@@ -63,6 +105,7 @@ export default class Login extends Component {
    );
  }
 }
+
 const NH = px2dp(120);
 const TFS = FONT_SIZE(20);
 const MD = px2dp(10);
